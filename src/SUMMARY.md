@@ -7,3 +7,4 @@
     - [Komentar](./ch-01/komentar.md)
     - [Variables & Identifiers](./ch-01/variables-identifiers.md)
     - [Arrays](./ch-01/arrays.md)
+    - [Object](./ch-01/objects.md)
