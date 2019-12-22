@@ -2,4 +2,4 @@
 
 Pada chapter 01 kita akan berkenalan dengan javascript.
 
-> Buku ini baru dioptimasi untuk pengembangan di OS Linux
+> Buku ini baru dioptimasi untuk pengembangan di Sistem Operasi Linux
