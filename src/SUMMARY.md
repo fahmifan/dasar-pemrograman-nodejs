@@ -6,3 +6,7 @@
     - [Program Pertama: Hello World](./ch-01/program-pertama.md)
     - [Komentar](./ch-01/komentar.md)
     - [Variables & Identifiers](./ch-01/variables-identifiers.md)
+    - [Arrays](./ch-01/arrays.md)
+    - [Object](./ch-01/objects.md)
+    - [Functions](./ch-01/functions.md)
+    - [Looping](./ch-01/looping.md)
