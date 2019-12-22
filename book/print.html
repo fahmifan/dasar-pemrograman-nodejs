@@ -83,7 +83,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div id="sidebar-scrollbox" class="sidebar-scrollbox">
-                <ol class="chapter"><li class="expanded "><a href="introduction.html"><strong aria-hidden="true">1.</strong> Introduction</a></li><li class="expanded "><a href="ch-01/00-intro.html"><strong aria-hidden="true">2.</strong> Chapter 01</a></li><li><ol class="section"><li class="expanded "><a href="ch-01/instalasi.html"><strong aria-hidden="true">2.1.</strong> Instalasi</a></li><li class="expanded "><a href="ch-01/program-pertama.html"><strong aria-hidden="true">2.2.</strong> Program Pertama: Hello World</a></li><li class="expanded "><a href="ch-01/komentar.html"><strong aria-hidden="true">2.3.</strong> Komentar</a></li><li class="expanded "><a href="ch-01/variables-identifiers.html"><strong aria-hidden="true">2.4.</strong> Variables &amp; Identifiers</a></li></ol></li></ol>
+                <ol class="chapter"><li class="expanded "><a href="introduction.html"><strong aria-hidden="true">1.</strong> Introduction</a></li><li class="expanded "><a href="ch-01/00-intro.html"><strong aria-hidden="true">2.</strong> Chapter 01</a></li><li><ol class="section"><li class="expanded "><a href="ch-01/instalasi.html"><strong aria-hidden="true">2.1.</strong> Instalasi</a></li><li class="expanded "><a href="ch-01/program-pertama.html"><strong aria-hidden="true">2.2.</strong> Program Pertama: Hello World</a></li><li class="expanded "><a href="ch-01/komentar.html"><strong aria-hidden="true">2.3.</strong> Komentar</a></li><li class="expanded "><a href="ch-01/variables-identifiers.html"><strong aria-hidden="true">2.4.</strong> Variables &amp; Identifiers</a></li><li class="expanded "><a href="ch-01/arrays.html"><strong aria-hidden="true">2.5.</strong> Arrays</a></li><li class="expanded "><a href="ch-01/objects.html"><strong aria-hidden="true">2.6.</strong> Object</a></li><li class="expanded "><a href="ch-01/functions.html"><strong aria-hidden="true">2.7.</strong> Functions</a></li><li class="expanded "><a href="ch-01/looping.html"><strong aria-hidden="true">2.8.</strong> Looping</a></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -254,6 +254,136 @@ for (let j = 0; j &lt; 2; ++j) {
 }
 
 console.log(&quot;let di luar loop, j: &quot; + j);
+</code></pre>
+<h1><a class="header" href="#arrays" id="arrays">Arrays</a></h1>
+<p>Array adalah kumpulan data dengan tipe yang sama. Sifat array pada javascript adalah dinamis, kita tidak perlu menentukan panjang suatu array. Berikut contoh deklarasi array</p>
+<pre><code class="language-js">// define an array var
+let arr = [0, 1, 2];
+</code></pre>
+<p>Array juga memiliki fungsi built-in untuk melakukan modifikasi seperti push dan pop.</p>
+<pre><code class="language-js">// add another value to the array
+arr.push(4);
+
+console.log(arr);
+
+// remove the last index of the array twice
+arr.pop();
+arr.pop();
+
+console.log(arr);
+</code></pre>
+<h1><a class="header" href="#object" id="object">Object</a></h1>
+<p>Object adalah sebuah tipe data yang dapat menampung beberapa tipe data lain yg berbeda. Tidak seperti array, object tidak diakses dengan <code>index</code> melainkan dengan <code>key</code>. Key  ataupun value ini dapat diisi dengan tipe data seperti string, number, atau boolean. Contoh simple object</p>
+<pre><code class="language-js">let orang = {
+    nama: 'miun',
+    umur: 17,
+    hobi: 'ngoding',
+    aktif: true,
+}
+</code></pre>
+<p>Pengaksesan object tersbut adalah denga menggunakan dot <code>.</code></p>
+<pre><code class="language-js">console.log('nama orang: ', orang.nama)
+</code></pre>
+<p>Selain itu pengakses juga dapat menggunakan <code>object['key']</code></p>
+<pre><code class="language-js">console.log('nama orang: ', orang['nama'])
+</code></pre>
+<p>Dengan object kita dapat membuat struktur data dengan mudah. Misal kita ingin membuat struktur untuk sebuah buku dalam perpustakaan, maka kita dapat membuat sbb:</p>
+<pre><code class="language-js">let buku = {
+    judul: 'Dasar Pemgrograman Node Js',
+    pengarang: 'miun173',
+    tahunTerbit: 2019,
+    topik: ['edukasi', 'pemrograman', 'node js', 'javascript'],
+}
+</code></pre>
+<blockquote>
+<p>Print semua item dalam topik
+<code>buku.topik.forEach(b =&gt; { console.log(b) })</code></p>
+</blockquote>
+<p>Kita juga dapat membuat object kosong lalu menambahkan <code>key:value</code> sbb:</p>
+<pre><code class="language-js">// define an empty object
+let obj = {};
+
+console.log(obj);
+
+// add a key value to the 'obj' var
+obj.hello = &quot;world&quot;;
+
+console.log(obj);
+
+// add another key value to the 'obj' var
+obj[&quot;number&quot;] = 1;
+
+console.log(obj);
+
+// delete a key value to the 'obj' var
+delete obj.hello;
+
+console.log(obj);
+</code></pre>
+<h1><a class="header" href="#functions" id="functions">Functions</a></h1>
+<p>Deklarasi <em>fungsi</em> pada javascript adalah sebagai berikut</p>
+<pre><code class="language-js">function print() {
+    console.log('Hello World')
+}
+
+// pemanggilan fungsi
+print()
+</code></pre>
+<p><em>Fungsi</em> juga dapat mengembalikan nilai</p>
+<pre><code class="language-js">function add(x, y) {
+    return x + y
+}
+
+const result = add(3, 4)
+console.log(result)
+// output: 7
+</code></pre>
+<p><em>Fungsi</em> memiliki <em>closure</em> yaitu dapat menggunakan variable di luar scope <em>fungsi</em> nya</p>
+<pre><code class="language-js">const num = 2.0
+function divideByNum(x) {
+    return x / num
+}
+
+const result = divideByNum(10)
+console.log(result)
+// output 5
+</code></pre>
+<p>Parameter dari <em>fungsi</em> ini adalah tipe data valid + <em>fungsi</em> yang sering disebut sebagai <em>callback</em></p>
+<pre><code class="language-js">// jumlahkan isi array belanja dan berikan hasil penjumalah ke fungsi *callback*
+function hitung(belanja, callback) {
+    let sum = 0;
+    belanja.forEach(function(bl) {
+        sum += bl
+    })
+
+    callback(sum)
+}
+
+// print total dari callback
+hitung([100, 200, 150], function(total) {
+    console.log(total)
+})
+</code></pre>
+<h1><a class="header" href="#looping" id="looping">Looping</a></h1>
+<p>Ada beberapa teknik lopping dalam javascript. Yang pertama adalah disebut <code>for-loop</code> biasa</p>
+<pre><code class="language-js">for (let step = 0; step &lt; 5; step++) {
+  console.log(step + &quot; step to the east&quot;);
+}
+</code></pre>
+<p>Selanjutnya ada built-in function <code>forEach</code></p>
+<pre><code class="language-js">const fruits = ['apple', 'orange', 'tomato', 'cerry']
+fruits.forEach(function (fruit) {
+    console.log(fruit)
+})
+</code></pre>
+<p><code>forEach</code> ini melakukan iterasi ke setiap item dalam array. Fungsi ini menerima parameter berupa <code>fungsi</code> yang disebut <code>callback</code>. <code>callback</code> dari <code>forEach</code> memiliki parameter pertama yang merupakan item dari setiap iterasi. Jika kita pisah-pisah</p>
+<pre><code class="language-js">// print setiap fruit yang masuk
+function print(fruit) {
+    console.log(fruit)
+}
+
+// iterasi fruits dan jalankan fungsi print di setiap iterasi
+fruits.forEach(print)
 </code></pre>
 
                     </main>

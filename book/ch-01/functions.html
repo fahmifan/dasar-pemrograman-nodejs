@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Program Pertama: Hello World - Dasar Pemrograman Node Js</title>
+        <title>Functions - Dasar Pemrograman Node Js</title>
         
 
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
@@ -81,7 +81,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div id="sidebar-scrollbox" class="sidebar-scrollbox">
-                <ol class="chapter"><li class="expanded "><a href="../introduction.html"><strong aria-hidden="true">1.</strong> Introduction</a></li><li class="expanded "><a href="../ch-01/00-intro.html"><strong aria-hidden="true">2.</strong> Chapter 01</a></li><li><ol class="section"><li class="expanded "><a href="../ch-01/instalasi.html"><strong aria-hidden="true">2.1.</strong> Instalasi</a></li><li class="expanded "><a href="../ch-01/program-pertama.html" class="active"><strong aria-hidden="true">2.2.</strong> Program Pertama: Hello World</a></li><li class="expanded "><a href="../ch-01/komentar.html"><strong aria-hidden="true">2.3.</strong> Komentar</a></li><li class="expanded "><a href="../ch-01/variables-identifiers.html"><strong aria-hidden="true">2.4.</strong> Variables &amp; Identifiers</a></li><li class="expanded "><a href="../ch-01/arrays.html"><strong aria-hidden="true">2.5.</strong> Arrays</a></li><li class="expanded "><a href="../ch-01/objects.html"><strong aria-hidden="true">2.6.</strong> Object</a></li><li class="expanded "><a href="../ch-01/functions.html"><strong aria-hidden="true">2.7.</strong> Functions</a></li><li class="expanded "><a href="../ch-01/looping.html"><strong aria-hidden="true">2.8.</strong> Looping</a></li></ol></li></ol>
+                <ol class="chapter"><li class="expanded "><a href="../introduction.html"><strong aria-hidden="true">1.</strong> Introduction</a></li><li class="expanded "><a href="../ch-01/00-intro.html"><strong aria-hidden="true">2.</strong> Chapter 01</a></li><li><ol class="section"><li class="expanded "><a href="../ch-01/instalasi.html"><strong aria-hidden="true">2.1.</strong> Instalasi</a></li><li class="expanded "><a href="../ch-01/program-pertama.html"><strong aria-hidden="true">2.2.</strong> Program Pertama: Hello World</a></li><li class="expanded "><a href="../ch-01/komentar.html"><strong aria-hidden="true">2.3.</strong> Komentar</a></li><li class="expanded "><a href="../ch-01/variables-identifiers.html"><strong aria-hidden="true">2.4.</strong> Variables &amp; Identifiers</a></li><li class="expanded "><a href="../ch-01/arrays.html"><strong aria-hidden="true">2.5.</strong> Arrays</a></li><li class="expanded "><a href="../ch-01/objects.html"><strong aria-hidden="true">2.6.</strong> Object</a></li><li class="expanded "><a href="../ch-01/functions.html" class="active"><strong aria-hidden="true">2.7.</strong> Functions</a></li><li class="expanded "><a href="../ch-01/looping.html"><strong aria-hidden="true">2.8.</strong> Looping</a></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -148,34 +148,63 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1><a class="header" href="#program-pertama-hello-world" id="program-pertama-hello-world">Program Pertama: Hello World</a></h1>
-<p>Untuk mempermudah, kita buat terlebih dahulu folder project untuk chapter-01 ini. Buka terminal...</p>
-<pre><code>$ mkdir -p dasar-nodejs/ch-01
-$ cd dasar-nodejs/ch-01
-</code></pre>
-<p>Lalu buka folder <code>ch-01</code> di text editor. Buat file <code>hello_world.js</code> dan isi dengan kode program berikut</p>
-<pre><code class="language-js">// hello_world.js
+                        <h1><a class="header" href="#functions" id="functions">Functions</a></h1>
+<p>Deklarasi <em>fungsi</em> pada javascript adalah sebagai berikut</p>
+<pre><code class="language-js">function print() {
+    console.log('Hello World')
+}
 
-console.log('Hello World')
+// pemanggilan fungsi
+print()
 </code></pre>
-<p>Lalu, jalankan script tersebut sebagai berikut <code>node hello_world.js</code></p>
-<pre><code class="language-bash"># output
-Hello World
+<p><em>Fungsi</em> juga dapat mengembalikan nilai</p>
+<pre><code class="language-js">function add(x, y) {
+    return x + y
+}
+
+const result = add(3, 4)
+console.log(result)
+// output: 7
 </code></pre>
-<p>Yay, program berhasil dibuat :) </p>
+<p><em>Fungsi</em> memiliki <em>closure</em> yaitu dapat menggunakan variable di luar scope <em>fungsi</em> nya</p>
+<pre><code class="language-js">const num = 2.0
+function divideByNum(x) {
+    return x / num
+}
+
+const result = divideByNum(10)
+console.log(result)
+// output 5
+</code></pre>
+<p>Parameter dari <em>fungsi</em> ini adalah tipe data valid + <em>fungsi</em> yang sering disebut sebagai <em>callback</em></p>
+<pre><code class="language-js">// jumlahkan isi array belanja dan berikan hasil penjumalah ke fungsi *callback*
+function hitung(belanja, callback) {
+    let sum = 0;
+    belanja.forEach(function(bl) {
+        sum += bl
+    })
+
+    callback(sum)
+}
+
+// print total dari callback
+hitung([100, 200, 150], function(total) {
+    console.log(total)
+})
+</code></pre>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
                         
-                            <a rel="prev" href="../ch-01/instalasi.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="../ch-01/objects.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
                         
 
                         
-                            <a rel="next" href="../ch-01/komentar.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next" href="../ch-01/looping.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
                         
@@ -187,13 +216,13 @@ Hello World
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
                 
-                    <a href="../ch-01/instalasi.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a href="../ch-01/objects.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
                 
 
                 
-                    <a href="../ch-01/komentar.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a href="../ch-01/looping.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
                 

@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Program Pertama: Hello World - Dasar Pemrograman Node Js</title>
+        <title>Arrays - Dasar Pemrograman Node Js</title>
         
 
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
@@ -81,7 +81,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div id="sidebar-scrollbox" class="sidebar-scrollbox">
-                <ol class="chapter"><li class="expanded "><a href="../introduction.html"><strong aria-hidden="true">1.</strong> Introduction</a></li><li class="expanded "><a href="../ch-01/00-intro.html"><strong aria-hidden="true">2.</strong> Chapter 01</a></li><li><ol class="section"><li class="expanded "><a href="../ch-01/instalasi.html"><strong aria-hidden="true">2.1.</strong> Instalasi</a></li><li class="expanded "><a href="../ch-01/program-pertama.html" class="active"><strong aria-hidden="true">2.2.</strong> Program Pertama: Hello World</a></li><li class="expanded "><a href="../ch-01/komentar.html"><strong aria-hidden="true">2.3.</strong> Komentar</a></li><li class="expanded "><a href="../ch-01/variables-identifiers.html"><strong aria-hidden="true">2.4.</strong> Variables &amp; Identifiers</a></li><li class="expanded "><a href="../ch-01/arrays.html"><strong aria-hidden="true">2.5.</strong> Arrays</a></li><li class="expanded "><a href="../ch-01/objects.html"><strong aria-hidden="true">2.6.</strong> Object</a></li><li class="expanded "><a href="../ch-01/functions.html"><strong aria-hidden="true">2.7.</strong> Functions</a></li><li class="expanded "><a href="../ch-01/looping.html"><strong aria-hidden="true">2.8.</strong> Looping</a></li></ol></li></ol>
+                <ol class="chapter"><li class="expanded "><a href="../introduction.html"><strong aria-hidden="true">1.</strong> Introduction</a></li><li class="expanded "><a href="../ch-01/00-intro.html"><strong aria-hidden="true">2.</strong> Chapter 01</a></li><li><ol class="section"><li class="expanded "><a href="../ch-01/instalasi.html"><strong aria-hidden="true">2.1.</strong> Instalasi</a></li><li class="expanded "><a href="../ch-01/program-pertama.html"><strong aria-hidden="true">2.2.</strong> Program Pertama: Hello World</a></li><li class="expanded "><a href="../ch-01/komentar.html"><strong aria-hidden="true">2.3.</strong> Komentar</a></li><li class="expanded "><a href="../ch-01/variables-identifiers.html"><strong aria-hidden="true">2.4.</strong> Variables &amp; Identifiers</a></li><li class="expanded "><a href="../ch-01/arrays.html" class="active"><strong aria-hidden="true">2.5.</strong> Arrays</a></li><li class="expanded "><a href="../ch-01/objects.html"><strong aria-hidden="true">2.6.</strong> Object</a></li><li class="expanded "><a href="../ch-01/functions.html"><strong aria-hidden="true">2.7.</strong> Functions</a></li><li class="expanded "><a href="../ch-01/looping.html"><strong aria-hidden="true">2.8.</strong> Looping</a></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -148,34 +148,36 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1><a class="header" href="#program-pertama-hello-world" id="program-pertama-hello-world">Program Pertama: Hello World</a></h1>
-<p>Untuk mempermudah, kita buat terlebih dahulu folder project untuk chapter-01 ini. Buka terminal...</p>
-<pre><code>$ mkdir -p dasar-nodejs/ch-01
-$ cd dasar-nodejs/ch-01
+                        <h1><a class="header" href="#arrays" id="arrays">Arrays</a></h1>
+<p>Array adalah kumpulan data dengan tipe yang sama. Sifat array pada javascript adalah dinamis, kita tidak perlu menentukan panjang suatu array. Berikut contoh deklarasi array</p>
+<pre><code class="language-js">// define an array var
+let arr = [0, 1, 2];
 </code></pre>
-<p>Lalu buka folder <code>ch-01</code> di text editor. Buat file <code>hello_world.js</code> dan isi dengan kode program berikut</p>
-<pre><code class="language-js">// hello_world.js
+<p>Array juga memiliki fungsi built-in untuk melakukan modifikasi seperti push dan pop.</p>
+<pre><code class="language-js">// add another value to the array
+arr.push(4);
 
-console.log('Hello World')
+console.log(arr);
+
+// remove the last index of the array twice
+arr.pop();
+arr.pop();
+
+console.log(arr);
 </code></pre>
-<p>Lalu, jalankan script tersebut sebagai berikut <code>node hello_world.js</code></p>
-<pre><code class="language-bash"># output
-Hello World
-</code></pre>
-<p>Yay, program berhasil dibuat :) </p>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
                         
-                            <a rel="prev" href="../ch-01/instalasi.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="../ch-01/variables-identifiers.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
                         
 
                         
-                            <a rel="next" href="../ch-01/komentar.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next" href="../ch-01/objects.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
                         
@@ -187,13 +189,13 @@ Hello World
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
                 
-                    <a href="../ch-01/instalasi.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a href="../ch-01/variables-identifiers.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
                 
 
                 
-                    <a href="../ch-01/komentar.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a href="../ch-01/objects.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
                 
