@@ -5,3 +5,4 @@
     - [Instalasi](./ch-01/instalasi.md)
     - [Program Pertama: Hello World](./ch-01/program-pertama.md)
     - [Komentar](./ch-01/komentar.md)
+    - [Variables](./ch-01/variables.md)
