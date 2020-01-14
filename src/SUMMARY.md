@@ -10,3 +10,4 @@
     - [Object](./ch-01/objects.md)
     - [Functions](./ch-01/functions.md)
     - [Looping](./ch-01/looping.md)
+    - [Async Await](./ch-01/async-await.md)
